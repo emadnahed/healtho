@@ -1,70 +1,65 @@
-# Getting Started with Create React App
+# **Nutrient Calculator App**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the Nutrient Calculator App, a React-based application that helps users calculate the nutrients of their meals based on the ingredients they select.
 
-## Available Scripts
+## **Overview**
 
-In the project directory, you can run:
+This application allows users to select ingredients and calculates the total nutrients, including calories, protein, fat, and carbohydrates, of their meal. The app provides a user-friendly interface, making it easy for users to input their ingredients and get instant results.
 
-### `npm start`
+## **Features**
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+* **Ingredient Selection** : Users can select from a variety of ingredients, including fruits, vegetables, meats, and grains.
+* **Nutrient Calculation** : The app calculates the total nutrients of the selected ingredients, including calories, protein, fat, and carbohydrates.
+* **Meal Planning** : Users can plan their meals in advance and save their selections for future reference.
+* **Easy Navigation** : The app features a simple and intuitive navigation system, making it easy for users to move between different sections.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## **Technical Details**
 
-### `npm test`
+* **Frontend** : The app is built using React, a popular JavaScript library for building user interfaces.
+* **Routing** : The app uses React Router for client-side routing, allowing users to navigate between different sections of the app.
+* **State Management** : The app uses the `useState` hook to manage state and update the nutrient calculations in real-time.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## **Components**
 
-### `npm run build`
+* **App.js** : The main application component that sets up the routing configuration and renders the layout.
+* **Home.js** : The component that renders the home page, where users can select ingredients and view their nutrient calculations.
+* **All.js** : The component that renders the all ingredients page, where users can view a list of all available ingredients.
+* **Layout.js** : The component that provides a common layout for both the home and all ingredients pages.
+* **Card.js** : A reusable component that displays individual ingredients and their corresponding nutrient information.
+* **Navbar.js** : A reusable component that provides navigation links to different sections of the app.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## **Screenshots:**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### PC design:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Mobile version:
 
-### `npm run eject`
+![1719952995665](image/README/1719952995665.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## **Getting Started**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+To run the application, follow these steps:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+1. Clone the repository to your local machine.
+2. Install the dependencies by running `npm install` or `yarn install`.
+3. Start the development server by running `npm start` or `yarn start`.
+4. Open your web browser and navigate to `http://localhost:3000` to see the application in action.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### **License**
 
-## Learn More
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### **Contributing**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Contributions are welcome! If you'd like to contribute to this project, please fork the repository and submit a pull request with your changes.
 
-### Code Splitting
+### **Future Development**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Future development plans include:
 
-### Analyzing the Bundle Size
+* Adding more ingredients to the database
+* Implementing a search function for ingredients
+* Allowing users to save and load their meal plans
+* Integrating with popular health and fitness APIs to provide more detailed nutrient information
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Thank you for using the Nutrient Calculator App!
