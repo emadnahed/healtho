@@ -63,7 +63,7 @@ export const dryFruits = [
     carbs: 1.4,
   },
   {
-    name: "Anjeer (Figs)",
+    name: "Figs",
     calories: 24.9,
     protein: 0.3,
     fat: 0.1,

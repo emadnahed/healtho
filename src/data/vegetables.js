@@ -1,7 +1,7 @@
 export const vegetables = [
   
     {
-      name: "carrot",
+      name: "Carrot",
       calories: 41,
       protein: 0.9,
       fat: 0.2,
@@ -9,14 +9,14 @@ export const vegetables = [
     },
     
     {
-      name: "cucumber",
+      name: "Cucumber",
       calories: 15,
       protein: 0.7,
       fat: 0.1,
       carbs: 3.6
     },
     {
-      name: "radish",
+      name: "Radish",
       calories: 16,
       protein: 0.6,
       fat: 0.1,

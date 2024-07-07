@@ -1,6 +1,6 @@
 export const Main = [
   {
-    name: "chicken breast-200g",
+    name: "Chicken Breast(200g)",
     calories: 330,
     protein: 60,
     fat: 7.2,
@@ -8,7 +8,7 @@ export const Main = [
   },
 
   {
-    name: "beef",
+    name: "Beef",
     calories: 576,
     protein: 52.66,
     fat: 39.08,
@@ -16,22 +16,16 @@ export const Main = [
   },
 
   {
-    name: "boiled eggs-3pcs",
+    name: "3 Eggs(Boiled)",
     calories: 60,
     protein: 6.75,
     fat: 1,
     carbs: 0.5,
   },
 
+  
   {
-    name: "shafi fish-200g",
-    calories: 270,
-    protein: 36,
-    fat: 14,
-    carbs: 1,
-  },
-  {
-    name: "sausages",
+    name: "Sausages",
     calories: 180,
     protein: 12,
     fat: 9.19,
@@ -39,7 +33,7 @@ export const Main = [
   },
 
   {
-    name: "tuna",
+    name: "Tuna",
     calories: 100,
     protein: 23,
     fat: 1,
@@ -55,7 +49,7 @@ export const Main = [
   },
 
   {
-    name: "boiled/mashed potato",
+    name: "Mashed potato",
     calories: 87,
     protein: 2,
     fat: 0.1,

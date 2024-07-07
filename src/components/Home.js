@@ -33,7 +33,6 @@ const MainOptions = Main.map((main) => ({
   value: main.name,
 }));
 
-
 // Map Fixed daily items to the required option structure (label and value)
 const DailyOptions = Daily.map((daily) => ({
   label: daily.name,
@@ -94,7 +93,6 @@ export default function Home() {
   const [DailySelectedOptions, setDailySelectedOptions] = useState([]);
   const [DailyNutritionalSummary, setDailyNutritionalSummary] = useState({}); // new state to hold the summary
 
-
   useEffect(() => {
     // STATE CHANGE ---> DFsummaryCalculation
     const DFsummary = DFselectedOptions.reduce(
@@ -152,7 +150,6 @@ export default function Home() {
     );
     setMainNutritionalSummary(Mainsummary);
 
-
     // STATE CHANGE ---> Veg summary Calculation
     const Dailysummary = DailySelectedOptions.reduce(
       (acc, current) => {
@@ -166,146 +163,145 @@ export default function Home() {
       { carbs: 0, protein: 0, fat: 0, calories: 0 }
     );
     setDailyNutritionalSummary(Dailysummary);
-
-
-    
   }, [DFselectedOptions, FselectedOptions, VegSelectedOptions, MainSelectedOptions, DailySelectedOptions]);
 
   return (
     <div className="multi-selector">
-      
       {/* Daily fixed items */}
-      <div className="selectors">
-        <Select
-          closeMenuOnSelect={false}
-          defaultValue={''}
-          isMulti
-          options={DailyOptions}
-          styles={colourStyles}
-          placeholder="The Daily options"
-          onChange={(selected) => setDailySelectedOptions(selected || [])}
-        />
-      </div>
-      {/* Main Course Summary below */}
-      <div>
-        {DailyNutritionalSummary && (
-          <Card
-            fat={parseFloat(DailyNutritionalSummary.fat).toFixed(2)}
-            carbs={parseFloat(DailyNutritionalSummary.carbs).toFixed(2)}
-            protein={parseFloat(DailyNutritionalSummary.protein).toFixed(2)}
-            calories={parseFloat(DailyNutritionalSummary.calories).toFixed(2)}
-            name={"Fixed Daily items"}
+      <div className="whole">
+        <div className="selectors">
+          <Select
+            closeMenuOnSelect={false}
+            defaultValue={""}
+            isMulti
+            options={DailyOptions}
+            styles={colourStyles}
+            placeholder="The Daily options"
+            onChange={(selected) => setDailySelectedOptions(selected || [])}
           />
-        )}
+        </div>
+        {/* Main Course Summary below */}
+        <div>
+          {DailyNutritionalSummary && (
+            <Card
+              fat={parseFloat(DailyNutritionalSummary.fat).toFixed(2)}
+              carbs={parseFloat(DailyNutritionalSummary.carbs).toFixed(2)}
+              protein={parseFloat(DailyNutritionalSummary.protein).toFixed(2)}
+              calories={parseFloat(DailyNutritionalSummary.calories).toFixed(2)}
+              name={"Fixed Daily items"}
+            />
+          )}
+        </div>
       </div>
 
-      
-      
-      
-      
       {/* Main course items */}
-      <div className="selectors">
-        <Select
-          closeMenuOnSelect={false}
-          defaultValue={""}
-          isMulti
-          options={MainOptions}
-          styles={colourStyles}
-          placeholder="Select the Main Course options"
-          onChange={(selected) => setMainSelectedOptions(selected || [])}
-        />
-      </div>
-      {/* Main Course Summary below */}
-      <div>
-        {MainNutritionalSummary && (
-          <Card
-            fat={parseFloat(MainNutritionalSummary.fat).toFixed(2)}
-            carbs={parseFloat(MainNutritionalSummary.carbs).toFixed(2)}
-            protein={parseFloat(MainNutritionalSummary.protein).toFixed(2)}
-            calories={parseFloat(MainNutritionalSummary.calories).toFixed(2)}
-            name={"MAIN COURSE"}
+      <div className="whole">
+        <div className="selectors">
+          <Select
+            closeMenuOnSelect={false}
+            defaultValue={""}
+            isMulti
+            options={MainOptions}
+            styles={colourStyles}
+            placeholder="Select the Main Course options"
+            onChange={(selected) => setMainSelectedOptions(selected || [])}
           />
-        )}
+        </div>
+        {/* Main Course Summary below */}
+        <div>
+          {MainNutritionalSummary && (
+            <Card
+              fat={parseFloat(MainNutritionalSummary.fat).toFixed(2)}
+              carbs={parseFloat(MainNutritionalSummary.carbs).toFixed(2)}
+              protein={parseFloat(MainNutritionalSummary.protein).toFixed(2)}
+              calories={parseFloat(MainNutritionalSummary.calories).toFixed(2)}
+              name={"MAIN COURSE"}
+            />
+          )}
+        </div>
       </div>
 
       {/* Dry Fruits Selectors */}
-      <div className="selectors">
-        <Select
-          closeMenuOnSelect={false}
-          defaultValue={""}
-          isMulti
-          options={dryFruitOptions}
-          styles={colourStyles}
-          placeholder="Select the dry fruit options"
-          onChange={(selected) => setDFSelectedOptions(selected || [])}
-        />
-      </div>
-      {/* Dry fruits Summary below */}
-      <div>
-        {DFnutritionalSummary && (
-          <Card
-            fat={parseFloat(DFnutritionalSummary.fat).toFixed(2)}
-            carbs={parseFloat(DFnutritionalSummary.carbs).toFixed(2)}
-            protein={parseFloat(DFnutritionalSummary.protein).toFixed(2)}
-            calories={parseFloat(DFnutritionalSummary.calories).toFixed(2)}
-            name={"DRY FRUITS"}
+      <div className="whole">
+        <div className="selectors">
+          <Select
+            closeMenuOnSelect={false}
+            defaultValue={""}
+            isMulti
+            options={dryFruitOptions}
+            styles={colourStyles}
+            placeholder="Select the dry fruit options"
+            onChange={(selected) => setDFSelectedOptions(selected || [])}
           />
-        )}
-      </div>
+        </div>
+        {/* Dry fruits Summary below */}
+        <div>
+          {DFnutritionalSummary && (
+            <Card
+              fat={parseFloat(DFnutritionalSummary.fat).toFixed(2)}
+              carbs={parseFloat(DFnutritionalSummary.carbs).toFixed(2)}
+              protein={parseFloat(DFnutritionalSummary.protein).toFixed(2)}
+              calories={parseFloat(DFnutritionalSummary.calories).toFixed(2)}
+              name={"DRY FRUITS"}
+            />
+          )}
+        </div>
+        </div>
 
-      {/* Fruits Selectors */}
-      <div className="selectors">
-        <Select
-          closeMenuOnSelect={false}
-          defaultValue={""}
-          isMulti
-          options={FruitOptions}
-          styles={colourStyles}
-          placeholder="Select the Fruit options"
-          onChange={(selected) => setFSelectedOptions(selected || [])}
-        />
-      </div>
-      {/* Dry fruits Summary below */}
-      <div>
-        {FnutritionalSummary && (
-          <Card
-            fat={parseFloat(FnutritionalSummary.fat).toFixed(2)}
-            carbs={parseFloat(FnutritionalSummary.carbs).toFixed(2)}
-            protein={parseFloat(FnutritionalSummary.protein).toFixed(2)}
-            calories={parseFloat(FnutritionalSummary.calories).toFixed(2)}
-            name={"FRUITS"}
-          />
-        )}
-      </div>
+        {/* Fruits Selectors */}
+        <div className="whole">
+          <div className="selectors">
+            <Select
+              closeMenuOnSelect={false}
+              defaultValue={""}
+              isMulti
+              options={FruitOptions}
+              styles={colourStyles}
+              placeholder="Select the Fruit options"
+              onChange={(selected) => setFSelectedOptions(selected || [])}
+            />
+          </div>
+          {/* Dry fruits Summary below */}
+          <div>
+            {FnutritionalSummary && (
+              <Card
+                fat={parseFloat(FnutritionalSummary.fat).toFixed(2)}
+                carbs={parseFloat(FnutritionalSummary.carbs).toFixed(2)}
+                protein={parseFloat(FnutritionalSummary.protein).toFixed(2)}
+                calories={parseFloat(FnutritionalSummary.calories).toFixed(2)}
+                name={"FRUITS"}
+              />
+            )}
+          </div>
+        </div>
+      
 
       {/* Vegetable Selectors */}
-      <div className="selectors">
-        <Select
-          closeMenuOnSelect={false}
-          defaultValue={""}
-          isMulti
-          options={VegOptions}
-          styles={colourStyles}
-          placeholder="Select the Fruit options"
-          onChange={(selected) => setVegSelectedOptions(selected || [])}
-        />
-      </div>
-      {/* Veg fruits Summary below */}
-      <div>
-        {VegNutritionalSummary && (
-          <Card
-            fat={parseFloat(VegNutritionalSummary.fat).toFixed(2)}
-            carbs={parseFloat(VegNutritionalSummary.carbs).toFixed(2)}
-            protein={parseFloat(VegNutritionalSummary.protein).toFixed(2)}
-            calories={parseFloat(VegNutritionalSummary.calories).toFixed(2)}
-            name={"VEGETABLES"}
+      <div className="whole">
+        <div className="selectors">
+          <Select
+            closeMenuOnSelect={false}
+            defaultValue={""}
+            isMulti
+            options={VegOptions}
+            styles={colourStyles}
+            placeholder="Select the Fruit options"
+            onChange={(selected) => setVegSelectedOptions(selected || [])}
           />
-        )}
+        </div>
+        {/* Veg fruits Summary below */}
+        <div>
+          {VegNutritionalSummary && (
+            <Card
+              fat={parseFloat(VegNutritionalSummary.fat).toFixed(2)}
+              carbs={parseFloat(VegNutritionalSummary.carbs).toFixed(2)}
+              protein={parseFloat(VegNutritionalSummary.protein).toFixed(2)}
+              calories={parseFloat(VegNutritionalSummary.calories).toFixed(2)}
+              name={"VEGETABLES"}
+            />
+          )}
+        </div>
       </div>
-
-  
-
-
     </div>
   );
 }

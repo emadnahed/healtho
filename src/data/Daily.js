@@ -1,13 +1,13 @@
 export const Daily = [
   {
-    name: "milk 500ml",
+    name: "Milk(1/2L)",
     calories: 195,
     protein: 17.5,
     fat: 2.5,
     carbs: 26.01,
   },
   {
-    "name": "egg white (3 large)",
+    "name": "Egg York(3)",
     "calories": 17,
     "protein": 10,
     "fat": 0.05,
@@ -16,7 +16,7 @@ export const Daily = [
  
  {
 
-  "name": "Protein supplement-1 scoop",
+  "name": "Protein Scoop",
   "calories": 141,
   "protein": 20,
   "fat": 5.5,
@@ -32,7 +32,7 @@ export const Daily = [
 //   },
 
   {
-    name: "dry fruits",
+    name: "Dry Fruits",
     calories: 527.4,
     protein: 15.27,
     fat: 36.733,
@@ -40,7 +40,7 @@ export const Daily = [
   },
 
   {
-    name: "cheese(per triangle) - regular",
+    name: "Cheese(Triangle)",
     calories: 36,
     protein: 1.8,
     fat: 2.8,
@@ -48,7 +48,7 @@ export const Daily = [
   },
 
   {
-    name: "sweet curd",
+    name: "Sweet Curd",
     calories: 120,
     protein: 4,
     fat: 5,

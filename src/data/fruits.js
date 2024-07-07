@@ -1,48 +1,48 @@
 export const fruits = [
     {
-      name: "apple",
+      name: "Apple",
       calories: 52,
       protein: 0.3,
       fat: 0.2,
       carbs: 14
     },
     {
-      name: "banana",
+      name: "Banana",
       calories: 89,
       protein: 1.1,
       fat: 0.3,
       carbs: 23
     },
     {
-      name: "orange",
+      name: "Orange",
       calories: 47,
       protein: 0.9,
       fat: 0.1,
       carbs: 12
     },
     {
-      name: "strawberry",
+      name: "Strawberry",
       calories: 32,
       protein: 0.7,
       fat: 0.3,
       carbs: 8
     },
     {
-      name: "grapes",
+      name: "Grapes",
       calories: 69,
       protein: 0.7,
       fat: 0.2,
       carbs: 18
     },
     {
-      name: "watermelon",
+      name: "Watermelon",
       calories: 30,
       protein: 0.6,
       fat: 0.2,
       carbs: 8
     },
     {
-      name: "pineapple",
+      name: "Pineapple",
       calories: 50,
       protein: 0.5,
       fat: 0.1,
