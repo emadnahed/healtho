@@ -19,14 +19,21 @@ export default function All() {
         })}
       </div>
 
-      <h1>Fruits</h1>
+      <h1>Fruits(100g)</h1>
       <div className="container">
         {fruits.map((item) => {
           return <Card fat={item.fat} protein={item.protein} carbs={item.carbs} calories={item.calories} name={item.name} />;
         })}
       </div>
 
-      <h1>Vegetables</h1>
+      <h1>Dry Fruits(10g)</h1>
+      <div className="container">
+        {dryFruits.map((item) => {
+          return <Card fat={item.fat} protein={item.protein} carbs={item.carbs} calories={item.calories} name={item.name} />;
+        })}
+      </div>
+
+      <h1>Vegetables(100g)</h1>
       <div className="container">
         {vegetables.map((item) => {
           return <Card fat={item.fat} protein={item.protein} carbs={item.carbs} calories={item.calories} name={item.name} />;

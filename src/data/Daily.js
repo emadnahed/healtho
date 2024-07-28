@@ -1,22 +1,22 @@
 export const Daily = [
   {
-    name: "Milk(1/2L)",
+    name: "Milk(1.5L)",
     calories: 195,
     protein: 17.5,
     fat: 2.5,
     carbs: 26.01,
   },
   {
-    "name": "Egg York(3)",
-    "calories": 17,
-    "protein": 10,
-    "fat": 0.05,
-    "carbs": 0.24
+    "name": "Egg White(100g)",
+    "calories": 152,
+    "protein": 11,
+    "fat": 0.2,
+    "carbs": 0.7
   },
  
  {
 
-  "name": "Protein Scoop",
+  "name": "Protein Scoop(33g)",
   "calories": 141,
   "protein": 20,
   "fat": 5.5,

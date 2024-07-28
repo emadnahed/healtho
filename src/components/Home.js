@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import Select from "react-select";
 import Card from "./Card";
 
@@ -93,6 +93,59 @@ export default function Home() {
   const [DailySelectedOptions, setDailySelectedOptions] = useState([]);
   const [DailyNutritionalSummary, setDailyNutritionalSummary] = useState({}); // new state to hold the summary
 
+  const [totalNutritionalSummary, setTotalNutritionalSummary] = useState({
+    carbs: 0,
+    protein: 0,
+    fat: 0,
+    calories: 0,
+  });
+
+  const calculateTotalNutritionalSummary = () => {
+    const totalSummary = {
+      carbs: 0,
+      protein: 0,
+      fat: 0,
+      calories: 0,
+    };
+
+    if (MainNutritionalSummary) {
+      totalSummary.carbs += MainNutritionalSummary.carbs;
+      totalSummary.protein += MainNutritionalSummary.protein;
+      totalSummary.fat += MainNutritionalSummary.fat;
+      totalSummary.calories += MainNutritionalSummary.calories;
+    }
+
+    if (DFnutritionalSummary) {
+      totalSummary.carbs += DFnutritionalSummary.carbs;
+      totalSummary.protein += DFnutritionalSummary.protein;
+      totalSummary.fat += DFnutritionalSummary.fat;
+      totalSummary.calories += DFnutritionalSummary.calories;
+    }
+
+    if (FnutritionalSummary) {
+      totalSummary.carbs += FnutritionalSummary.carbs;
+      totalSummary.protein += FnutritionalSummary.protein;
+      totalSummary.fat += FnutritionalSummary.fat;
+      totalSummary.calories += FnutritionalSummary.calories;
+    }
+
+    if (VegNutritionalSummary) {
+      totalSummary.carbs += VegNutritionalSummary.carbs;
+      totalSummary.protein += VegNutritionalSummary.protein;
+      totalSummary.fat += VegNutritionalSummary.fat;
+      totalSummary.calories += VegNutritionalSummary.calories;
+    }
+
+    if (DailyNutritionalSummary) {
+      totalSummary.carbs += DailyNutritionalSummary.carbs;
+      totalSummary.protein += DailyNutritionalSummary.protein;
+      totalSummary.fat += DailyNutritionalSummary.fat;
+      totalSummary.calories += DailyNutritionalSummary.calories;
+    }
+
+    setTotalNutritionalSummary(totalSummary);
+  };
+
   useEffect(() => {
     // STATE CHANGE ---> DFsummaryCalculation
     const DFsummary = DFselectedOptions.reduce(
@@ -163,10 +216,29 @@ export default function Home() {
       { carbs: 0, protein: 0, fat: 0, calories: 0 }
     );
     setDailyNutritionalSummary(Dailysummary);
+    // calculateTotalNutritionalSummary();
   }, [DFselectedOptions, FselectedOptions, VegSelectedOptions, MainSelectedOptions, DailySelectedOptions]);
+
+  useEffect(() => {
+    calculateTotalNutritionalSummary();
+  }, [MainNutritionalSummary, DFnutritionalSummary, FnutritionalSummary, VegNutritionalSummary, DailyNutritionalSummary]);
 
   return (
     <div className="multi-selector">
+      <div className="whole total" >
+        <div>
+          {totalNutritionalSummary && (
+            <Card
+              fat={parseFloat(totalNutritionalSummary.fat).toFixed(2)}
+              carbs={parseFloat(totalNutritionalSummary.carbs).toFixed(2)}
+              protein={parseFloat(totalNutritionalSummary.protein).toFixed(2)}
+              calories={parseFloat(totalNutritionalSummary.calories).toFixed(2)}
+              name={"TOTAL NUTRITIONAL SUMMARY"}
+            />
+          )}
+        </div>
+      </div>
+
       {/* Daily fixed items */}
       <div className="whole">
         <div className="selectors">
@@ -184,7 +256,7 @@ export default function Home() {
         <div>
           {DailyNutritionalSummary && (
             <Card
-              fat={parseFloat(DailyNutritionalSummary.fat).toFixed(2)}
+              fat={DailyNutritionalSummary > 0 ? parseFloat(DailyNutritionalSummary.fat).toFixed(2) : 0}
               carbs={parseFloat(DailyNutritionalSummary.carbs).toFixed(2)}
               protein={parseFloat(DailyNutritionalSummary.protein).toFixed(2)}
               calories={parseFloat(DailyNutritionalSummary.calories).toFixed(2)}
@@ -242,39 +314,38 @@ export default function Home() {
               carbs={parseFloat(DFnutritionalSummary.carbs).toFixed(2)}
               protein={parseFloat(DFnutritionalSummary.protein).toFixed(2)}
               calories={parseFloat(DFnutritionalSummary.calories).toFixed(2)}
-              name={"DRY FRUITS"}
+              name={"DRY FRUITS (per 10g)"}
             />
           )}
         </div>
-        </div>
+      </div>
 
-        {/* Fruits Selectors */}
-        <div className="whole">
-          <div className="selectors">
-            <Select
-              closeMenuOnSelect={false}
-              defaultValue={""}
-              isMulti
-              options={FruitOptions}
-              styles={colourStyles}
-              placeholder="Select the Fruit options"
-              onChange={(selected) => setFSelectedOptions(selected || [])}
-            />
-          </div>
-          {/* Dry fruits Summary below */}
-          <div>
-            {FnutritionalSummary && (
-              <Card
-                fat={parseFloat(FnutritionalSummary.fat).toFixed(2)}
-                carbs={parseFloat(FnutritionalSummary.carbs).toFixed(2)}
-                protein={parseFloat(FnutritionalSummary.protein).toFixed(2)}
-                calories={parseFloat(FnutritionalSummary.calories).toFixed(2)}
-                name={"FRUITS"}
-              />
-            )}
-          </div>
+      {/* Fruits Selectors */}
+      <div className="whole">
+        <div className="selectors">
+          <Select
+            closeMenuOnSelect={false}
+            defaultValue={""}
+            isMulti
+            options={FruitOptions}
+            styles={colourStyles}
+            placeholder="Select the Fruit options"
+            onChange={(selected) => setFSelectedOptions(selected || [])}
+          />
         </div>
-      
+        {/* Dry fruits Summary below */}
+        <div>
+          {FnutritionalSummary && (
+            <Card
+              fat={parseFloat(FnutritionalSummary.fat).toFixed(2)}
+              carbs={parseFloat(FnutritionalSummary.carbs).toFixed(2)}
+              protein={parseFloat(FnutritionalSummary.protein).toFixed(2)}
+              calories={parseFloat(FnutritionalSummary.calories).toFixed(2)}
+              name={"FRUITS per 100g"}
+            />
+          )}
+        </div>
+      </div>
 
       {/* Vegetable Selectors */}
       <div className="whole">
@@ -297,7 +368,7 @@ export default function Home() {
               carbs={parseFloat(VegNutritionalSummary.carbs).toFixed(2)}
               protein={parseFloat(VegNutritionalSummary.protein).toFixed(2)}
               calories={parseFloat(VegNutritionalSummary.calories).toFixed(2)}
-              name={"VEGETABLES"}
+              name={"VEGETABLES (per 100g)"}
             />
           )}
         </div>

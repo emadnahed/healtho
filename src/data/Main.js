@@ -1,39 +1,31 @@
 export const Main = [
   {
-    name: "Chicken Breast(200g)",
-    calories: 330,
-    protein: 60,
-    fat: 7.2,
+    name: "Chicken Breast(500g)",
+    calories: 825,
+    protein: 155,
+    fat: 18.5,
     carbs: 0,
   },
 
   {
-    name: "Beef",
-    calories: 576,
-    protein: 52.66,
-    fat: 39.08,
+    name: "Beef(500g)",
+    calories: 1240,
+    protein: 112,
+    fat: 85,
     carbs: 0,
   },
 
   {
-    name: "3 Eggs(Boiled)",
-    calories: 60,
-    protein: 6.75,
-    fat: 1,
-    carbs: 0.5,
+    name: "Egg whites(100g-boiled)",
+    calories: 52,
+    protein: 11,
+    fat: 0.2,
+    carbs: 1.2,
   },
 
-  
-  {
-    name: "Sausages",
-    calories: 180,
-    protein: 12,
-    fat: 9.19,
-    carbs: 4.19,
-  },
 
   {
-    name: "Tuna",
+    name: "Tuna(100g)",
     calories: 100,
     protein: 23,
     fat: 1,
@@ -49,22 +41,22 @@ export const Main = [
   },
 
   {
-    name: "Mashed potato",
-    calories: 87,
-    protein: 2,
-    fat: 0.1,
-    carbs: 20,
+    name: "Mashed potato(100g)",
+    calories: 94,
+    protein: 1.8,
+    fat: 3.4,
+    carbs: 15,
   },
 
   {
-    name: "Brown Rice",
+    name: "Brown Rice(100g)",
     calories: 63,
     protein: 1.33,
     fat: 0.41,
     carbs: 12.82,
   },
   {
-    name: "Chickpeas",
+    name: "Chickpeas(200g)",
     calories: 364,
     protein: 19,
     fat: 6,
